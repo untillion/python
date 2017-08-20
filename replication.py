@@ -1,3 +1,5 @@
+# Copy your FrequentWords function (along with all required subroutines) from Replication.py
+# You will need to copy FrequentWords, CountDict, and PatternCount
 def FrequentWords(Text, k):
     FrequentPatterns = [] # output variable
     # your code here
@@ -31,7 +33,16 @@ def PatternCount(Pattern, Text):
         if Text[i:i+len(Pattern)] == Pattern:
             count = count+1
     return count
-### DO NOT MODIFY THE CODE BELOW THIS LINE ###
+
+# Then, call your FrequentWords function, passing in "GATCCAGATCCCCATAC" for Text and 2 for k,
+# and store the result as a variable named words.
+words = FrequentWords('GATCCAGATCCCCATAC',2)
+
+
+
+# Finally, print the words variable.
+print (words)
+
 import sys
 lines = sys.stdin.read().splitlines()
 print(' '.join(FrequentWords(lines[0],int(lines[1]))))
