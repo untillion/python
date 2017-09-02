@@ -10,6 +10,14 @@ def FrequentWords(Text, k):
             FrequentPatterns.append(Text[i:i+k])
     return FrequentPatterns
 
+def remove_duplicates(list):
+  ItemsNoDuplicates = []
+  for i in list:
+    if i not in ItemsNoDuplicates:
+      ItemsNoDuplicates.append(i)
+  return ItemsNoDuplicates
+      
+
 # Input:  A string Text and an integer k
 # Output: CountDict(Text, k)
 # HINT:   This code should be identical to when you last implemented CountDict
