@@ -51,6 +51,25 @@ words = FrequentWords('GATCCAGATCCCCATAC',2)
 # Finally, print the words variable.
 print (words)
 
-import sys
-lines = sys.stdin.read().splitlines()
-print(' '.join(FrequentWords(lines[0],int(lines[1]))))
+
+# Input:  Two strings p and q
+# Output: An integer value representing the Hamming Distance between p and q.
+def HammingDistance(p, q):
+    # your code here
+    DistanceCodeP = []
+    DistanceCodeQ = []
+    distance = 0
+    for i in p:
+        DistanceCodeP.append(i)
+    for i in q:
+        DistanceCodeQ.append(i)
+    i = 0
+    while i < len(DistanceCodeP):
+        if DistanceCodeP[i] != DistanceCodeQ[i]:
+            distance += 1
+            i+=1
+        else:
+            distance = distance
+            i+=1
+    return distance
+
