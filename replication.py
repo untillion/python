@@ -72,4 +72,12 @@ def HammingDistance(p, q):
             distance = distance
             i+=1
     return distance
-
+def ApproximatePatternMatching(Pattern, Text, d):
+    positions = [] # initializing list of positions
+    # your code here
+    for i in range(len(Text)-len(Pattern)+1):
+        Patternif = Text[i:i+len(Pattern)]
+        PatternDist = HammingDistance(Pattern,Patternif)
+        if PatternDist < d+1:
+                         positions.append(i)
+    return positions
