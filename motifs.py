@@ -1,3 +1,19 @@
+def Score(Motifs):
+    # Insert code here
+    score = 0
+    k = len(Motifs[0])
+    ConsensusMatrix = Consensus(Motifs)
+    CountMotifs = Count(Motifs)
+    count = 0
+    k = len(Motifs[0])
+    t = len(Motifs)
+    ConsensusMotif = Consensus(Motifs)
+    for i in range(t):
+        for j in range(k):
+            if Motifs[i][j] != ConsensusMotif[j]:
+                count += 1
+    return count
+
 def Consensus(Motifs):
     # insert your code here
     k = len(Motifs[0])
